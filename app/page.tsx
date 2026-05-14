@@ -11,13 +11,13 @@ import Image from "next/image";
 export default function Home() {
   return (
     <> 
-    <Header />
+   
     <HeroSection />
     <WhoWeAre />
     <StatsSection />
     <NewArrivals />
     <CTASection />
-    <Footer />
+   
     </>
   );
 }
