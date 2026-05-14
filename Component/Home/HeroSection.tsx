@@ -58,10 +58,10 @@ export default function HeroSection() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="relative z-10 mx-auto flex h-[500px] max-w-[1400px] items-center px-6 sm:h-[580px] lg:h-[700px] lg:px-12">
+        <div className="relative z-10 mx-auto flex h-[700px] max-w-[1400px] items-center px-6 sm:h-[580px] lg:h-[700px] lg:px-12">
 
           {/* Left Content */}
-          <div className="w-full max-w-[560px]">
+          <div className="w-full  max-w-[560px]">
 
             {/* Eyebrow */}
             <span
@@ -98,7 +98,7 @@ export default function HeroSection() {
             {/* Button */}
             <div className={`mt-7 ${mounted ? "anim-button" : "opacity-0"}`}>
               <button
-                className="group relative overflow-hidden border border-black/20 bg-[#e8dcc1] px-7 py-3 text-black transition duration-500 hover:text-white"
+                className="group relative overflow-hidden border border-black/20 bg-[#f4e4be] px-7 py-3 text-black transition duration-500 hover:text-white"
                 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "15px", fontWeight: 500, letterSpacing: "2px" }}
               >
                 <span className="relative z-10 italic">Explore Now</span>
