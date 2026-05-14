@@ -39,7 +39,7 @@ export default function NewArrivals() {
     },
   ];
 
-  const renderStars = (rating) => (
+ const renderStars = (rating: number) => (
     <div className="flex items-center gap-[2px]">
       {[1, 2, 3, 4, 5].map((star) => {
         const filled = rating >= star;
