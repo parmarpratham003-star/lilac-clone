@@ -6,6 +6,7 @@ import Featuressection from "@/Component/Home/Featuressection";
   
 import StatsSection from "@/Component/Home/Statssection";
 import WhoWeAre from "@/Component/Home/WhoWeAre";
+import WhyChooseUs from "@/Component/Home/WhyChooseUs";
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
     <HeroSection />
     <WhoWeAre />
     <StatsSection />
+    <WhyChooseUs />
     <NewArrivals />
    
     <CTASection />
