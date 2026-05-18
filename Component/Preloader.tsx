@@ -27,7 +27,7 @@ export default function Preloader() {
     >
       {/* Texture */}
       <div
-        className="absolute inset-0 opacity-[0.05]"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
             "url('/Hero1.png')",

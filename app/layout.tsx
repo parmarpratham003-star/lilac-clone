@@ -37,8 +37,8 @@ export default function RootLayout({
         {/* Preloader */}
         <Preloader />
 
-        {/* Page Transition */}
-        <PageTransition />
+        {/* Page Transition
+        <PageTransition /> */}
         
         {/* Header */}
         <Header />
