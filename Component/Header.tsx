@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import { useStore } from "@/app/context/StoreContext";
 
 import {
   Search,
@@ -9,6 +10,7 @@ import {
   User,
   Menu,
   X,
+  Heart,
 } from "lucide-react";
 
 export default function Header() {
@@ -16,6 +18,10 @@ export default function Header() {
 
   const pathname = usePathname();
   const router = useRouter();
+
+  const { cart, wishlist } = useStore();
+  const cartCount = cart.length;
+  const wishlistCount = wishlist.length;
 
   const handleNavigate = (path: string) => {
     if (pathname === path) return;
@@ -117,20 +123,38 @@ export default function Header() {
             {/* Desktop Icons */}
             <div className="hidden items-center gap-5 md:flex">
 
-              <button className="transition duration-300 hover:scale-110">
-                <User
+              {/* Wishlist */}
+              <button
+                onClick={() => handleNavigate("/wishlist")}
+                className="relative transition duration-300 hover:scale-110"
+              >
+                <Heart
                   size={18}
                   strokeWidth={1.8}
-                  className="text-black"
+                  className={pathname === "/wishlist" ? "text-[#c9804d]" : "text-black"}
                 />
+                {wishlistCount > 0 && (
+                  <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-[#c9804d] text-[9px] font-semibold text-white">
+                    {wishlistCount}
+                  </span>
+                )}
               </button>
 
-              <button className="transition duration-300 hover:scale-110">
+              {/* Cart */}
+              <button
+                onClick={() => handleNavigate("/cart")}
+                className="relative transition duration-300 hover:scale-110"
+              >
                 <ShoppingBag
                   size={18}
                   strokeWidth={1.8}
-                  className="text-black"
+                  className={pathname === "/cart" ? "text-[#c9804d]" : "text-black"}
                 />
+                {cartCount > 0 && (
+                  <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-[#c9804d] text-[9px] font-semibold text-white">
+                    {cartCount}
+                  </span>
+                )}
               </button>
             </div>
 
@@ -226,29 +250,47 @@ export default function Header() {
           {/* Mobile Icons */}
           <div className="mt-8 flex items-center gap-5">
 
-            <User
-              size={18}
-              strokeWidth={1.8}
-              className="text-black"
-            />
-
-            <ShoppingBag
-              size={18}
-              strokeWidth={1.8}
-              className="text-black"
-            />
-
-            <div className="relative">
-              <Search
+            {/* Wishlist */}
+            <button
+              onClick={() => {
+                setOpen(false);
+                handleNavigate("/wishlist");
+              }}
+              className="relative transition duration-300"
+            >
+              <Heart
                 size={18}
                 strokeWidth={1.8}
-                className="text-black"
+                className={pathname === "/wishlist" ? "text-[#c9804d]" : "text-black"}
               />
+              {wishlistCount > 0 && (
+                <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-[#c9804d] text-[9px] font-semibold text-white">
+                  {wishlistCount}
+                </span>
+              )}
+            </button>
 
-              <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-[#c9804d] text-[8px] font-bold text-white">
-                0
-              </span>
-            </div>
+            {/* Cart */}
+            <button
+              onClick={() => {
+                setOpen(false);
+                handleNavigate("/cart");
+              }}
+              className="relative transition duration-300"
+            >
+              <ShoppingBag
+                size={18}
+                strokeWidth={1.8}
+                className={pathname === "/cart" ? "text-[#c9804d]" : "text-black"}
+              />
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-[#c9804d] text-[9px] font-semibold text-white">
+                  {cartCount}
+                </span>
+              )}
+            </button>
+
+           
           </div>
         </div>
       </div>

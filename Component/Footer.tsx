@@ -5,10 +5,21 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#f4e4be] text-black overflow-hidden">
-      
+    <footer
+      className="relative overflow-hidden bg-[#f4e4be] text-black"
+      style={{
+        backgroundImage:
+          "url('footer.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+       {/* Light Overlay */}
+      <div className="absolute inset-0 bg-[#f4e4be]/50" />
+
       {/* Top */}
-      <div className="mx-auto max-w-[1400px] px-5 py-10 lg:px-12">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-5 py-10 lg:px-12">
         
         <div className="grid gap-10 border-t border-black/10 pt-10 md:grid-cols-2 lg:grid-cols-4">
           
@@ -112,7 +123,7 @@ export default function Footer() {
                 className="h-12 w-full bg-transparent px-5 text-sm text-black outline-none placeholder:text-[#9c9c9c]"
               />
 
-              <button className="flex h-12 w-14 items-center justify-center bg-white border-l border-black/10 text-[#c9804d] transition duration-300 hover:bg-[#f4e4be]">
+              <button className="flex h-12 w-14 items-center justify-center border-l border-black/10 bg-white text-[#c9804d] transition duration-300 hover:bg-[#f4e4be]">
                 <ArrowUpRight size={16} />
               </button>
             </div>
@@ -121,7 +132,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-black/10">
+      <div className="relative z-10 border-t border-black/10">
         <div className="mx-auto max-w-[1400px] px-5 py-4 text-center lg:px-12">
           <p className="text-[11px] tracking-[2px] text-[#6f6f6f]">
             © 2026 LILAC. ALL RIGHTS RESERVED.
@@ -136,6 +147,7 @@ export default function Footer() {
             opacity: 0;
             transform: translateY(20px);
           }
+
           100% {
             opacity: 1;
             transform: translateY(0);

@@ -145,7 +145,7 @@ export default function WhyChooseUs() {
           </div>
 
           {/* Right Content */}
-          <div className="flex h-full flex-col justify-between order-2 lg:order-2">
+          <div className="flex h-full flex-col  justify-between order-2 lg:order-2">
             
             {/* Top Content */}
             <div>
@@ -222,7 +222,7 @@ export default function WhyChooseUs() {
               {features.map((item, index) => (
                 <div
                   key={index}
-                  className={`group border border-[#e7d6b4] bg-[#f4e4be] p-5 transition duration-500 hover:border-black/10 hover:bg-white ${
+                  className={`group border border-[#e7d6b4] bg-[#f4e4be] p-5 transition duration-500 hover:border-black/10   hover:bg-white ${
                     mounted
                       ? "anim-card"
                       : "opacity-0"

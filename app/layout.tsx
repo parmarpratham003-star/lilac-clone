@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+
+import {
+  Geist,
+  Geist_Mono,
+} from "next/font/google";
+
 import "./globals.css";
 
 import Header from "@/Component/Header";
 import Footer from "@/Component/Footer";
 import Preloader from "@/Component/Preloader";
 import PageTransition from "@/Component/PageTransition";
+
+import Providers from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +26,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Lilac",
-  description: "Luxury Beauty Website",
+  description:
+    "Luxury Beauty Website",
 };
 
 export default function RootLayout({
@@ -32,25 +40,23 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#f5f1eb]">
-        
-        {/* Preloader */}
-        <Preloader />
+     <body className="min-h-full flex flex-col bg-[#f5f1eb]">
 
-        {/* Page Transition
-        <PageTransition /> */}
-        
-        {/* Header */}
-        <Header />
+  <Providers>
 
-        {/* Main Content */}
-        <main className="flex-1">
-          {children}
-        </main>
+    <Preloader />
 
-        {/* Footer */}
-        <Footer />
-      </body>
+    <Header />
+
+    <main className="flex-1">
+      {children}
+    </main>
+
+    <Footer />
+
+  </Providers>
+
+</body>
     </html>
   );
 }

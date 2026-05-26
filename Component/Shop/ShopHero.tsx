@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export default function AboutHero() {
+export default function ShopHero() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -22,6 +22,22 @@ export default function AboutHero() {
             opacity: 1;
             transform: translateY(0);
           }
+        }
+
+        @keyframes imageZoom {
+          from {
+            transform: scale(1.08);
+          }
+
+          to {
+            transform: scale(1);
+          }
+        }
+
+        .anim-image {
+          animation: imageZoom 2s
+            cubic-bezier(0.22,1,0.36,1)
+            forwards;
         }
 
         .anim-eyebrow {
@@ -47,26 +63,23 @@ export default function AboutHero() {
           animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1)
             0.65s forwards;
         }
-
-        .anim-button {
-          opacity: 0;
-          animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1)
-            0.82s forwards;
-        }
       `}</style>
 
-      <section
-        className="relative overflow-hidden"
-        style={{
-        backgroundColor: "#f4e4be",
-          backgroundImage: "url('AH2.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-       <div className="relative z-10 mx-auto flex h-[500px] max-w-[1400px] items-center px-5 sm:h-[500px] sm:px-6 md:px-8 lg:h-[600px] lg:px-12">
-          
+      <section className="relative overflow-hidden bg-[#f4e4be]">
+        
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="Shop.png"
+            alt="Luxury Beauty"
+            className="anim-image h-full w-full object-cover"
+          />
+        </div>
+
+        
+
+        <div className="relative z-10 mx-auto flex h-[520px] max-w-[1400px] items-center px-5 sm:h-[580px] sm:px-6 md:px-8 lg:h-[600px] lg:px-12">
+
           {/* Left Content */}
           <div className="w-full max-w-[560px]">
             
@@ -84,7 +97,7 @@ export default function AboutHero() {
                 fontSize: "12px",
               }}
             >
-              ABOUT LILAC BEAUTY
+              PREMIUM SKINCARE COLLECTION
             </span>
 
             {/* Heading */}
@@ -94,7 +107,7 @@ export default function AboutHero() {
                   "'Cormorant Garamond', serif",
                 fontWeight: 500,
               }}
-              className="leading-[1.05] text-black text-[36px] sm:text-[46px] md:text-[52px] lg:text-[58px]"
+              className="leading-[1.05] text-black text-[34px] sm:text-[46px] lg:text-[58px]"
             >
               <span
                 className={`block ${
@@ -103,7 +116,7 @@ export default function AboutHero() {
                     : "opacity-0"
                 }`}
               >
-                Elevate your
+                Discover timeless
               </span>
 
               <span
@@ -113,13 +126,13 @@ export default function AboutHero() {
                     : "opacity-0"
                 }`}
               >
-                skincare ritual
+                beauty essentials
               </span>
             </h1>
 
             {/* Body */}
             <p
-              className={`mt-4 max-w-[420px] leading-7 text-black/55 sm:leading-8 ${
+              className={`mt-4 max-w-[420px] leading-7 text-black/55 sm:max-w-[460px] sm:text-[16px] sm:leading-8 ${
                 mounted
                   ? "anim-body"
                   : "opacity-0"
@@ -131,39 +144,12 @@ export default function AboutHero() {
                 fontWeight: 400,
               }}
             >
-              Discover luxurious skincare essentials
-              crafted with premium ingredients,
-              timeless elegance, and nourishing
-              formulas designed to bring glow,
-              softness, and confidence into your
-              daily beauty ritual.
+              Explore luxurious skincare rituals,
+              nourishing beauty essentials, and
+              premium collections crafted to bring
+              elegance, softness, and glow into
+              your everyday routine.
             </p>
-
-            {/* Button */}
-            <div
-              className={`mt-7 ${
-                mounted
-                  ? "anim-button"
-                  : "opacity-0"
-              }`}
-            >
-              <button
-                className="group relative overflow-hidden border border-black/20 bg-[#f4e4be] px-6 py-3 text-black transition duration-500 hover:text-white sm:px-7"
-                style={{
-                  fontFamily:
-                    "'Cormorant Garamond', serif",
-                  fontSize: "15px",
-                  fontWeight: 500,
-                  letterSpacing: "2px",
-                }}
-              >
-                <span className="relative z-10 italic">
-                  Discover More
-                </span>
-
-                <span className="absolute inset-0 translate-y-full bg-black transition duration-500 group-hover:translate-y-0" />
-              </button>
-            </div>
           </div>
         </div>
       </section>
