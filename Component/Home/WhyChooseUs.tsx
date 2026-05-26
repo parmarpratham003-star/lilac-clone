@@ -111,7 +111,7 @@ export default function WhyChooseUs() {
         }
       `}</style>
 
-      <section className="relative overflow-hidden bg-[#f7f3ee] pt-20 pb-10 sm:pt-24 sm:pb-12 lg:pt-28 lg:pb-5">
+      <section className="relative overflow-hidden bg-white pt-20 pb-10 sm:pt-24 sm:pb-12 lg:pt-28 lg:pb-5">
         
         <div className="mx-auto grid max-w-[1400px] items-stretch gap-10 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-12">
           

@@ -2,7 +2,7 @@
 
 export default function CTASection() {
   return (
-    <section className="relative overflow-hidden bg-[#f7f3ee] py-10 lg:py-14">
+    <section className="relative overflow-hidden bg-white py-10 lg:py-14">
       
       {/* Texture Background */}
       <div className="absolute inset-0 overflow-hidden opacity-[0.05]">
